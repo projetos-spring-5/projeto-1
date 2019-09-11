@@ -15,6 +15,18 @@ public class User {
 	@ManyToMany
 	private Set<Role> roles;
 	
+	//Construtores
+	public User() {
+	}
+	
+	public User(String name, String email) {
+		super();
+		this.name = name;
+		this.email = email;
+	}
+
+
+	//GET E SET
 	public Long getId() {
 		return id;
 	}
