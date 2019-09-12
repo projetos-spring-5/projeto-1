@@ -1,25 +1,24 @@
 package francisco.io.projeto1.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import francisco.io.projeto1.repository.UserRepository;
+
+import francisco.io.projeto1.service.UserService;
 
 @Controller
 public class UserController {
 
-	private UserRepository userRepository;
-	
-	//construtor
-	public UserController(UserRepository userRepository) {
-		this.userRepository = userRepository;
-	}
+	//DI - Inejção de dependencia
+	@Autowired
+	UserService userService;
 	
 	//anotação para criar rota para acessar o metodo
 	@RequestMapping("/user")
 	public String getUsers(Model model) {
-		model.addAttribute("usersList", this.userRepository.findAll());
+		model.addAttribute("usersList", this.userService.findAll());
 		
 		return "user";
 	}

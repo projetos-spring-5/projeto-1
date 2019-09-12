@@ -4,7 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import francisco.io.projeto1.entity.User;
-
+/*
+ * Faz Acesso aos Dados
+ * 
+ * */
 public interface UserRepository extends JpaRepository<User, Long>{
 
 	//consulta pelo nome, metodo do spirng
