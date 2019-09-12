@@ -42,6 +42,9 @@ public class DataInitilirz implements ApplicationListener<ApplicationEvent> {
 		/*
 		 * user.setName("novo nome"); userRepository.save(user);
 		 */
+		
+		// ultilizando um metodo proprio no repository para busca
+		User user = userRepository.findByName("Tatiane");
 
 	}
 
